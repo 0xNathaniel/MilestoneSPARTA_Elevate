@@ -19,8 +19,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include("users.urls")),
-    path('todolist/', include("todolist.urls")),
-    path('subgoal_progresstracker/', include("subgoal_progresstracker.urls")),
-    path('reminders/', include("reminders.urls")),
+    path('todo/', include("todo.urls")),
+    path('subgoal/', include("subgoal.urls")),
+    path('reminder/', include("reminder.urls")),
 ]

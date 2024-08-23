@@ -31,10 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'users',
-    'todolist',
-    'subgoal_progresstracker',
-    'reminders',
+    'todo',
+    'subgoal',
+    'reminder',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
