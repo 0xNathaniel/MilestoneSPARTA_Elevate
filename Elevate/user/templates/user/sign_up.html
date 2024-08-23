@@ -1,0 +1,27 @@
+{% extends "user/layout.html" %}
+
+{% block title %}
+    User Registration
+{% endblock %}
+
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>Form Error</p>
+    {% endif %}
+
+    <div >
+        <div>
+            <h1>Sign Up</h1>
+
+            <form action="{% url 'user:sign_up' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Register</button>
+            </form>
+            
+            <p>Already have an account? <a href="{% url 'user:login' %}">Login</a></p>
+        </div>
+    </div>
+{% endblock %}

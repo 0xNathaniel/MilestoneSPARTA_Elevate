@@ -1,0 +1,28 @@
+{% extends "user/layout.html" %}
+
+{% block title %}
+    User Login
+{% endblock %}
+
+
+{% block content %}
+    <div class="login-page">
+        <div class="login-container">
+            <h1>Welcome</h1>
+
+            <form action="{% url 'user:login' %}" method="post">
+                <label for="username_field">Username</label>
+                <input type="text" id="username_field" name="username">
+                <br>
+                <br>
+                <label for="password_field">Password</label>
+                <input type="password" id="password_field" name="password">
+                <br>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+
+            <p>Don't have an account? <a href="{% url 'user:sign_up' %}">Sign up</a></p>
+        </div>
+    </div>
+{% endblock %}
