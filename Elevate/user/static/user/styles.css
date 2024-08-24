@@ -30,3 +30,66 @@ body {
 .login-container a {
     color: inherit;
 }
+
+@media (min-height: 932px) {
+    h1 {
+        font-size: 36px;
+    }   
+     
+    .sign-up-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .sign-up-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 500px;
+        height: 1000px;
+        border-radius: 8px;
+        text-align: justify;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .sign-up-container a {
+        color: inherit;
+    }
+}
+
+@media (max-height: 932px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .sign-up-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-size: 10px;
+    }
+
+    .sign-up-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 300px;
+        height: 800px;
+        border-radius: 8px;
+        text-align: justify;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .sign-up-container a {
+        color: inherit;
+    }
+}

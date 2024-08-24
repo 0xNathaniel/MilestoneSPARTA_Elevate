@@ -11,13 +11,13 @@
         <p>Form Error</p>
     {% endif %}
 
-    <div >
-        <div>
+    <div class="sign-up-page">
+        <div class="sign-up-container">
             <h1>Sign Up</h1>
 
             <form action="{% url 'user:sign_up' %}" method="post">
                 {% csrf_token %}
-                {{ form }}
+                {{ form.as_p }}
                 <button type="submit">Register</button>
             </form>
             
