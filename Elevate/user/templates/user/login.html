@@ -1,5 +1,7 @@
 {% extends "user/layout.html" %}
 
+{% load static %}
+
 {% block title %}
     User Login
 {% endblock %}
@@ -8,18 +10,16 @@
 {% block content %}
     <div class="login-page">
         <div class="login-container">
-            <h1>Welcome</h1>
+            <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}">
 
             <form action="{% url 'user:login' %}" method="post">
                 <label for="username_field">Username</label>
-                <input type="text" id="username_field" name="username">
-                <br>
+                <input type="text" id="username_field" name="username" class="form-control form-control-size">
                 <br>
                 <label for="password_field">Password</label>
-                <input type="password" id="password_field" name="password">
+                <input type="password" id="password_field" name="password" class="form-control form-control-size">
                 <br>
-                <br>
-                <button type="submit">Login</button>
+                <button type="submit" class="button">Login</button>
             </form>
 
             <p>Don't have an account? <a href="{% url 'user:sign_up' %}">Sign up</a></p>

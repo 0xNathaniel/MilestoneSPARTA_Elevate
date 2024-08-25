@@ -1,5 +1,7 @@
 {% extends "user/layout.html" %}
 
+{% load static %}
+
 {% block title %}
     User Registration
 {% endblock %}
@@ -11,17 +13,19 @@
         <p>Form Error</p>
     {% endif %}
 
-    <div class="sign-up-page">
-        <div class="sign-up-container">
-            <h1>Sign Up</h1>
+        <div class="sign-up-page">
+            <div class="sign-up-container">
+                <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}">
 
-            <form action="{% url 'user:sign_up' %}" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Register</button>
-            </form>
-            
-            <p>Already have an account? <a href="{% url 'user:login' %}">Login</a></p>
+                <form action="{% url 'user:sign_up' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="button-container">
+                        <button type="submit" class="button">Sign Up</button>
+                    </div>
+                </form>
+                
+                <p>Already have an account? <a href="{% url 'user:login' %}">Login</a></p>
+            </div>
         </div>
-    </div>
 {% endblock %}
