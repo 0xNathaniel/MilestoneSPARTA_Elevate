@@ -15,7 +15,7 @@
 
         <div class="sign-up-page">
             <div class="sign-up-container">
-                <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}">
+                <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}" class="logo-image">
 
                 <form action="{% url 'user:sign_up' %}" method="post">
                     {% csrf_token %}

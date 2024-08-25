@@ -1,11 +1,36 @@
 * {
     font-family: "Montserrat", sans-serif;
+    color: white;
 }
 
 body {
     margin: 0px;
-    background-color: #f2f2f2;
+    background-image: url("/static/user/images/background_image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+.button {
+    background-image: url("/static/user/images/button_background.png");
+    background-size: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.form-control-size {
+    height: 30px;
+}
+
 
 .login-page {
     display: flex;
@@ -19,7 +44,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #ffffff;
     width: 350px;
     height: 400px;
     border-radius: 8px;
@@ -32,9 +56,6 @@ body {
 }
 
 @media (min-height: 932px) {
-    h1 {
-        font-size: 36px;
-    }   
      
     .sign-up-page {
         display: flex;
@@ -48,9 +69,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: #ffffff;
         width: 500px;
-        height: 1000px;
         border-radius: 8px;
         text-align: justify;
         gap: 1rem;
@@ -63,8 +82,8 @@ body {
 }
 
 @media (max-height: 932px) {
-    h1 {
-        font-size: 18px;
+    .logo-image {
+        width: 70%;
     }
 
     .sign-up-page {
@@ -80,9 +99,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: #ffffff;
         width: 300px;
-        height: 800px;
         border-radius: 8px;
         text-align: justify;
         gap: 1rem;
