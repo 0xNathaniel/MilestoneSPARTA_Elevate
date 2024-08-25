@@ -17,6 +17,6 @@ Sebelum menjalankan aplikasi ini secara lokal, pastikan kamu sudah menginstal be
 
 ## Cara Menjalankan Aplikasi
 
-1. Clone repository.
-2. Jalankan "pythohn manage.py runserver" pada directory repository dalam terminal.
+1. Clone repository dan akses folder Elevate yang merupakan folder Django project.
+2. Jalankan "python manage.py runserver" pada directory repository dalam terminal.
 3. Klik URL yang muncul pada terminal atau salin http://127.0.0.1:8000/ pada web-broswer.
