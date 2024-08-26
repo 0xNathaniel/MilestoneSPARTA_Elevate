@@ -9,7 +9,7 @@ from .forms import SignUpUserForm
 def home(request):
     # If user is not authenticated, redirect to login page
     if not request.user.is_authenticated:
-        return HttpResponseRedirect("login")
+        return HttpResponseRedirect(reverse("user:login"))
     # If user is authenticated, render home page
     return render(request, "user/home.html")
     
@@ -24,7 +24,7 @@ def sign_up(request):
             password = form.cleaned_data["password1"]
             user = authenticate(request, username=username, password=password)
             login(request, user)
-            return HttpResponseRedirect("home")
+            return HttpResponseRedirect(reverse("user:home"))
     # If user has not signed up, send user creation form
     else:
         form = SignUpUserForm()
@@ -33,7 +33,7 @@ def sign_up(request):
         "form": form
     })
 
-def login(request):
+def login_view(request):
     # If request method is POST, authenticate user
     if request.method == "POST":
         username = request.POST["username"]
@@ -43,7 +43,7 @@ def login(request):
         # If user is authenticated, login user
         if user is not None:
             login(request, user)
-            return render(request, "user/home.html")
+            return HttpResponseRedirect(reverse("user:home"))
         else:
             return render(request, "user/login.html", {
                 "message": "Invalid Username/Password"
@@ -51,6 +51,6 @@ def login(request):
     # If request method is not POST, render login page
     return render(request, "user/login.html")
         
-def logout(request):
+def logout_view(request):
     logout(request)
     return render(request, "user/login.html")
