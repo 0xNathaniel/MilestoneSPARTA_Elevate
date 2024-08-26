@@ -27,11 +27,6 @@ body {
     text-align: center;
 }
 
-.form-control-size {
-    height: 30px;
-}
-
-
 .login-page {
     display: flex;
     align-items: center;
@@ -55,7 +50,11 @@ body {
     color: inherit;
 }
 
-@media (min-height: 932px) {
+@media (min-height: 935px) {
+
+    .form-control-size {
+        height: 30px;
+    }
      
     .sign-up-page {
         display: flex;
@@ -70,6 +69,7 @@ body {
         justify-content: center;
         flex-direction: column;
         width: 500px;
+        height: 1000px;
         border-radius: 8px;
         text-align: justify;
         gap: 1rem;
@@ -79,11 +79,28 @@ body {
     .sign-up-container a {
         color: inherit;
     }
+
+    .sign-up-error-alert {
+        align-items: center;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .login-error-alert {
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: underline;
+    }
 }
 
-@media (max-height: 932px) {
-    .logo-image {
-        width: 70%;
+@media (max-height: 935px) {
+
+    .form-control-size {
+        height: 30px;
     }
 
     .sign-up-page {
@@ -100,6 +117,7 @@ body {
         justify-content: center;
         flex-direction: column;
         width: 300px;
+        height: 800px;
         border-radius: 8px;
         text-align: justify;
         gap: 1rem;
@@ -108,5 +126,45 @@ body {
 
     .sign-up-container a {
         color: inherit;
+    }
+}
+
+@media (max-height: 935px) {
+
+    .form-control-size {
+        height: 20px;
+    }
+
+    .sign-up-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-size: 10px;
+    }
+
+    .sign-up-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 300px;
+        height: 800px;
+        border-radius: 8px;
+        text-align: justify;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .sign-up-container a {
+        color: inherit;
+    }
+
+    .sign-up-error-alert, .login-error-alert {
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: underline;
     }
 }

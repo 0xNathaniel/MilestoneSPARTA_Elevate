@@ -9,23 +9,26 @@
 
 {% block content %}
 
-    {% if form.errors %}
-        <p>Form Error</p>
-    {% endif %}
+    <div class="sign-up-page">
+        <div class="sign-up-container">
+            <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}">
 
-        <div class="sign-up-page">
-            <div class="sign-up-container">
-                <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}" class="logo-image">
-
-                <form action="{% url 'user:sign_up' %}" method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <div class="button-container">
-                        <button type="submit" class="button">Sign Up</button>
-                    </div>
-                </form>
-                
-                <p>Already have an account? <a href="{% url 'user:login' %}">Login</a></p>
+            {% if form.errors %}
+            <div class="form-error-alert" role="alert">
+                <p>Invalid Password</p>
             </div>
+            {% endif %}
+            
+            <form action="{% url 'user:sign_up' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="button-container">
+                    <button type="submit" class="button">Sign Up</button>
+                </div>
+            </form>
+            
+            <p>Already have an account? <a href="{% url 'user:login' %}">Login</a></p>
         </div>
+    </div>
+
 {% endblock %}

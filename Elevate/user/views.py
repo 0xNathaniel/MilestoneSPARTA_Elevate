@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from .forms import SignUpUserForm
 
 # Create your views here.
@@ -44,7 +45,9 @@ def login(request):
             login(request, user)
             return render(request, "user/home.html")
         else:
-            return HttpResponseRedirect("login")
+            return render(request, "user/login.html", {
+                "message": "Invalid Username/Password"
+            })
     # If request method is not POST, render login page
     return render(request, "user/login.html")
         

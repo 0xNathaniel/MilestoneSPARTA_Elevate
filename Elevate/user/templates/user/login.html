@@ -12,7 +12,14 @@
         <div class="login-container">
             <img alt="Elevate Logo Image" src="{% static 'user/images/logo.png' %}">
 
+            {% if  message %}
+                <div class="login-error-alert" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+
             <form action="{% url 'user:login' %}" method="post">
+                {% csrf_token %}
                 <label for="username_field">Username</label>
                 <input type="text" id="username_field" name="username" class="form-control form-control-size">
                 <br>
