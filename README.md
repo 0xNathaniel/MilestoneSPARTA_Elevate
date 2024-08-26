@@ -8,20 +8,20 @@ Elevate merupakan sebuah aplikasi web yang dirancang untuk membantu pengguna dal
 2. **Reminder:** Setel pengingat untuk tugas atau sub-goal penting agar tidak terlewatkan.
 3. **Sub Goal & Progress Tracker:** Pecah tujuan besar menjadi sub-goal yang lebih kecil dan lacak progres pencapaiannya.
 
-## Prasyarat
+## Tech Stack
 
-Sebelum menjalankan aplikasi ini secara lokal, pastikan kamu sudah menginstal beberapa prasyarat berikut:
+Pembuatan aplikasi Elevate didukung dengan bahasa pemrograman dan framework sebagai berikut:
 
 - **Python**
 - **Django**
-- **Django-Tailwind**
-- **Django Browser Reload**
-- **Node JS**
+- **HTML**
+- **Tailwind CSS**
+- **JavaScript**
     
 
 ## Cara Menjalankan Aplikasi
 
-1. Jalankan command "pip install django", "pip install django-tailwind, dan "pip install django_browser_reload" untuk download seluruh prasyarat package.
-2. Clone repository dan akses folder Elevate yang merupakan folder Django project.
+1. Jalankan command "pip install django" pada terminal untuk menggunakan Django.
+2. Clone repository dan akses/pindah ke folder Elevate yang merupakan folder Django project.
 3. Jalankan "python manage.py runserver" pada directory repository dalam terminal.
 4. Klik URL yang muncul pada terminal atau salin http://127.0.0.1:8000/ pada web-broswer.
