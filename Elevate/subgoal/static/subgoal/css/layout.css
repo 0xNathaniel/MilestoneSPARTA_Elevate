@@ -6,7 +6,7 @@ html {
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url("/static/user/images/background_image.png");
+    background-image: url("/static/subgoal/images/background_image.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -87,7 +87,7 @@ body {
 .footer-container {
     color: black;
     font-weight: bold;
-    background-image: url("/static/user/images/down_background_mainpage.png");
+    background-image: url("/static/subgoal/images/down_background_mainpage.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

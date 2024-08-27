@@ -1,0 +1,42 @@
+.add-subgoal-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-subgoal-background {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 90vh;
+    width: 800px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.card-title {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #3e1562, #CF36DF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subgoal-form {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    justify-content: space-between;
+    align-items: space-between;
+    margin: 50px;
+}
+
+.form-group {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.add-button {
+    text-align: center;
+    border-radius: 8px;
+}

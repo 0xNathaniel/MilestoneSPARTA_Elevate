@@ -1,13 +1,76 @@
 {% extends "subgoal/layout.html" %}
 
+
+{% load static %}
+
+
 {% block title %}
     Home
 {% endblock%}
 
-{% block css %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'subgoal/css/home.css' %}">
 {% endblock %}
 
 {% block content %}
-    <h1>Home</h1>
+    <div class="subgoal-container">
+        <div class="subgoal-section">
+            <h2 class="subgoal-title">Add New Goal</h2>
+        </div>
+        <div>
+            <form action="{% url 'subgoal:add_goal' %}" method="post" class="search-bar">
+                {% csrf_token %}
+                <input type="text" class="search-input" placeholder="Insert new goal" name="goal">
+                <input type ="submit" class="search-button" value="Add">
+            </form>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-title">Goal</p>
+                    <ul>
+                    {% for goal in goals %}
+                        <li class="goal-list">
+                            <a class="goal-container" href="{% url 'subgoal:goal' goal.id %}">
+                                <div class="goal-title">{{ goal.title }}</div>
+                                <div>{{ goal.created_at }}</div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="card-center">
+                <div class="card-content">
+                    <a class="plus-sign-container" href="{% url 'subgoal:add_subgoal'%}">
+                        <img alt="Plus/Add Sign" src="{% static 'subgoal/images/plus_sign.png' %}" class="plus-sign">
+                    </a>
+                    <p class="card-title subgoal-title">Subgoal</p>
+                    {% if not subgoals %}
+                        <div class="empty-subgoal">Subgoal is empty, click a goal or create a new subgoal!</div>
+                    {% endif %}
+
+                    <ul>
+                        {% for subgoal in subgoals %}
+                            <li>
+                                <a class="goal-container" href="#">
+                                    <div class="goal-title">{{ subgoal.title }}</div>
+                                    <div>Deadline: {{ subgoal.deadline }}</div>
+                                    <div>Status: {{ subgoal.status }}</div>
+                                    <div>Priority: {{ subgoal.priority }}</div>
+                                    <div>Created at: {{ subgoal.created_at }}</div>
+                                    <br>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+               </div>
+            </div>
+            <div class="card">
+                <p class="card-title">Progress Tracker</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
