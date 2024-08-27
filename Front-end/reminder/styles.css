@@ -118,7 +118,7 @@ body {
 }
 
 .log-out {
-    color: #6d289d;
+    color: #8b3ac6;
     font-size: 1rem;
     font-weight: 600;
 }
@@ -215,7 +215,7 @@ body {
 }
 
 .menu-item {
-    margin-top: 25px;
+    margin-top: 20px;
     margin-left: 20px;
     display: flex;
 }
@@ -236,9 +236,10 @@ body {
     color: black;
 }
 
-.menu-text span {
+.submenu-title {
     font-size: 16px;
     color: black;
+    margin-top: 10px;
 }
 
 .notes-title {
@@ -260,35 +261,80 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     margin: 20px;
+    margin-bottom: 10px;
 }
 
 .timeline-title {
     color: black;
     font-size: 1.25rem;
     font-weight: 600;
-    margin: 20px;
+    margin-bottom: 20px
 }
 
 .timeline-lomba-list {
     margin: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    
 }
 
 .card-timeline {
     width: 95%;
-    height: 105px;
+    height: 90px;
     border: 1px solid black;
     display: flex;
     padding: 10px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: 600;
 }
 
 .card-date {
     color: #925aa4;
 }
 
+.left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.down-arrow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.icon-down {
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.icon-down::before{
+    content: "\25BC";
+    display: inline-block;
+    font-size: 24px;
+    color: black;
+}
+
 .footer {
-    width: 90%;
+    width: 70%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     height: auto;
     padding: 20px;
     background-color:rgba(248, 249, 250, 0);
@@ -297,6 +343,7 @@ body {
     align-items: center;
     border-top: 1px solid rgba(248, 249, 250, 0.5);
     margin-top: 110px;
+    box-sizing: border-box;
 }
 
 .footer-logo {
