@@ -9,9 +9,10 @@ from .forms import SignUpUserForm
 def home(request):
     # If user is not authenticated, redirect to login page
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("user:login"))
+        return render(request, "user/home1.html")
     # If user is authenticated, render home page
-    return render(request, "user/home.html")
+    else:
+        return render(request, "user/home2.html")
     
 def sign_up(request):
     # If request method is POST, validate form

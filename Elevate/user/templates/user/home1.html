@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'user/css/slash_screen.css' %}">
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <div class="logo-section">
+            <img class="logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo" />
+          </div>
+          <nav class="nav-links">
+            <a href="#" class="nav-link"><b>To do list</b></a>
+            <a href="#" class="nav-link"><b>Progress Tracker</b></a>
+            <a href="#" class="nav-link"><b>Subgoal</b></a>
+            <a href="#" class="nav-link"><b>Reminder</b></a>
+          </nav>
+          <div class="auth-links">
+            <a href="#" class="login-link">Log in</a>
+            <a href="#" class="signup-link">Sign up</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h2 class="hero-title">Your personal growth app</h2>
+          <p class="hero-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn-start">Let's start</a>
+            <a href="#" class="btn-questions">Questions?</a>
+          </div>
+        </div>
+        <div class="hero-background"></div>
+      </section>
+
+      <h2 class="features-title"><b>Our tools include:</b></h2>
+
+      <section class="features">
+
+        <div class="feature">
+          <h3 class="feature-title">1. To do list</h3>
+          <p class="feature-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
+          <img class="feature-img" src="{% static 'user/vectors/todo.svg' %}" alt="To do list">
+        </div>
+
+        <div class="feature">
+          <h3 class="feature-title">2. Progress tracker</h3>
+          <p class="feature-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
+          <img class="feature-img" src="{% static 'user/vectors/progress.svg' %}" alt="Progress tracker">
+        </div>
+
+        <div class="feature">
+          <h3 class="feature-title">3. Subgoal</h3>
+          <p class="feature-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
+          <img class="feature-img" src="{% static 'user/vectors/subgoal.svg' %}" alt="Subgoal">
+        </div>
+
+        <div class="feature">
+          <h3 class="feature-title">4. Reminder</h3>
+          <p class="feature-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
+          <img class="feature-img" src="{% static 'user/vectors/reminder.svg' %}" alt="Reminder">
+        </div>
+
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo-section">
+            <img class="footer-logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo" />
+          </div>
+          <p>&copy; 2024 ELEVATE. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
