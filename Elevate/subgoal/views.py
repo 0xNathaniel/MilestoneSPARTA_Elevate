@@ -59,7 +59,10 @@ def add_subgoal(request):
     })
     
 def delete_subgoal(request, subgoal_id):
-    pass
+    if request.method == "POST":
+        subgoal = Subgoal.objects.get(user=request.user, id=subgoal_id)
+        subgoal.delete()
+        return HttpResponseRedirect(reverse("subgoal:home"))
 
 def update_subgoal(request, subgoal_id):
     if request.method == "POST":

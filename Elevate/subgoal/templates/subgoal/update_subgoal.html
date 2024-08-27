@@ -44,6 +44,11 @@
                 <br>
                 <input type="submit" value="Update Subgoal" class="update-button">
             </form>
+
+            <form action="{% url 'subgoal:delete_subgoal' subgoal_id %}" method="post" class="subgoal-form">
+                {% csrf_token %}
+                <input type="submit" value="Delete Subgoal" class="delete-button">
+            </form>
         </div>
     </div>
 {% endblock %}

@@ -42,3 +42,8 @@
     border-radius: 8px;
     color: white;
 }
+
+.delete-button {
+    background-color: black;
+    color: white;
+}
