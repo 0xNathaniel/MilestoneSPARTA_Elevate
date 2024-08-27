@@ -55,7 +55,7 @@
                     <ul>
                         {% for subgoal in subgoals %}
                             <li>
-                                <a class="goal-container" href="#">
+                                <a class="goal-container" href="{% url 'subgoal:update_subgoal' subgoal.id %}">
                                     <div class="goal-title">{{ subgoal.title }}</div>
                                     <div>Deadline: {{ subgoal.deadline }}</div>
                                     <div>Status: {{ subgoal.status }}</div>
