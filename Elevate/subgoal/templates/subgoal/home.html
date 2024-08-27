@@ -35,7 +35,7 @@
                         <li class="goal-list">
                             <a class="goal-container" href="{% url 'subgoal:goal' goal.id %}">
                                 <div class="goal-title">{{ goal.title }}</div>
-                                <div>{{ goal.created_at }}</div>
+                                <div>Goal created at: {{ goal.created_at }}</div>
                             </a>
                         </li>
                     {% endfor %}
