@@ -1,13 +1,44 @@
 {% extends "todo/layout.html" %}
 
+
+{% load static %}
+
+
 {% block title %}
     Home
 {% endblock%}
 
-{% block css %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'todo/css/home.css' %}">
 {% endblock %}
 
+
 {% block content %}
-    <h1>Home</h1>
+    <div class="flex-container">
+        <div class="to-do-container">
+            <p class="title">To Do List</p>
+            
+            <form action="{% url 'todo:add' %}" method="post" class="mew-task-form">
+                {% csrf_token %}
+                <input type="text" name="task" placeholder="Add new task" class="form-input-field">
+                <input type="submit" value="Add" class="form-button">
+            </form>
+            <br>
+
+            {% for task in tasks %}
+                <div class="task-list-container">
+                    <div class="sub-task-list-container">
+                        {{ task.title }}
+                        <form action="{% url 'todo:delete' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Remove" class="remove-button">
+                        </form>
+                    </div>
+                    <div>{{ task.created_at }}</div>
+                </div>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
 {% endblock %}
