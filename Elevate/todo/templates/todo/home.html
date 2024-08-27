@@ -19,7 +19,7 @@
         <div class="to-do-container">
             <p class="title">To Do List</p>
             
-            <form action="{% url 'todo:add' %}" method="post" class="mew-task-form">
+            <form action="{% url 'todo:add' %}" method="post">
                 {% csrf_token %}
                 <input type="text" name="task" placeholder="Add new task" class="form-input-field">
                 <input type="submit" value="Add" class="form-button">

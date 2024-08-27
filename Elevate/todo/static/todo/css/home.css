@@ -29,11 +29,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-.new-task-form {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 .form-input-field {
     height: 30px;
     width: 450px;
@@ -48,6 +43,10 @@
     color: white;
     padding: 8px 25px;
     border-radius: 30px;
+}
+
+.form-button:hover {
+    cursor: pointer;
 }
 
 .task-list-container {
@@ -67,4 +66,8 @@
     background-color: #fbfbfb;
     padding: 5px 12px;
     border-radius: 8px;
+}
+
+.remove-button:hover {
+    cursor: pointer;
 }
