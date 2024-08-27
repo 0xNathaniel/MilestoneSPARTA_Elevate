@@ -22,13 +22,13 @@
             <img class="logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo" />
           </div>
           <nav class="nav-links">
-            <a href="{% url 'todo:home' %}" class="nav-link"><b>To do list</b></a>
+            <a href="{% url 'todo:home' %}" class="nav-link"><b>To Do List</b></a>
             <a href="{% url 'subgoal:home' %}" class="nav-link"><b>Progress Tracker</b></a>
             <a href="{% url 'subgoal:home' %}" class="nav-link"><b>Subgoal</b></a>
             <a href="{% url 'reminder:home' %}" class="nav-link"><b>Reminder</b></a>
           </nav>
           <div class="auth-links">
-            <a href="{% url 'user:login' %}" class="login-link">Logout</a>
+            <a href="{% url 'user:logout' %}" class="login-link">Logout</a>
             <a href="#" class="signup-link">{{ request.user.username }}</a>
           </div>
         </div>

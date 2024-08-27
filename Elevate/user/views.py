@@ -54,4 +54,4 @@ def login_view(request):
         
 def logout_view(request):
     logout(request)
-    return render(request, "user/login.html")
+    return HttpResponseRedirect(reverse("user:home"))
