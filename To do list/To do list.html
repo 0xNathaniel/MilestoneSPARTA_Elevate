@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black">
+
+    <div class="w-screen h-[800px] absolute bg-[#131313] top-0 left-0">
+        <div
+            class="w-[371px] h-[371px] absolute rounded-full bg-[#9a28c0] opacity-50 top-[70%] left-[30%] blur-[250px]">
+        </div>
+        <div
+            class="w-[371px] h-[371px] absolute rounded-full bg-[#9a28c0] opacity-50 top-[80%] left-[-20%] blur-[250px]">
+        </div>
+        <div
+            class="w-[371px] h-[371px] absolute rounded-full bg-[#5528c0] opacity-50 top-[50%] left-[70%] blur-[250px]">
+        </div>
+    </div>
+
+    <div
+        class="relative pt-7 px-12 top-[50px]  translate-x-1/2 w-[90%]  flex justify-center items-center z-[1000] mb-[90px]">
+        <div class="flex items-center justify-between w-full max-w-[1200px]">
+            <div class="ml-11">
+                <img src="Logo.svg" alt="Logo">
+            </div>
+            <div class="flex items-center gap-8 font-medium">
+                <div class="text-white font-bold">To do list</div>
+                <div class="text-white font-bold">Subgoal</div>
+                <div class="text-white font-bold">Progress tracker</div>
+                <div class="text-white font-bold">Reminder</div>
+            </div>
+            <div class="flex items-center gap-5 mr-11">
+                <div class="text-purple-800 font-bold">
+                    Log out
+                </div>
+                <div class="w-[65px] h-[65px] rounded-full overflow-hidden">
+                    <img src="https://via.placeholder.com/65x65" alt="Profile Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="relative flex w-full text-center top-14 ">
+        <h1 class="relative text-white mx-auto text-4xl font-bold max-w-full">
+            To do list
+        </h1> 
+    </div>
+    
+
+    <div class="flex items-center h-screen mt-1">
+        <div class="container flex mx-10 grid-cols-3 gap-7 justify-center px-7">
+            <!-- box to do list -->
+            <div class="bg-white p-4 rounded w-2/6">
+                <div class="inline-flex w-full">
+                    <input id="todoInput" type="text" placeholder="New task" class="w-full border rounded">
+                    <button onclick="addTodo()" class="bg-transparent text-black px-2 py-1 rounded w-f flex font-extrabold text-xl ">+</button>
+                </div>
+                <ul id="todoList" class="mt-4 list-disc list-inside">
+                </ul>
+            </div>
+
+            <!-- box description -->
+            <div class="bg-white p-3 rounded w-1/2">
+                <h5 class="text-xl font-bold mb-4">Description</h5>
+                
+                <input type="text" id="todoDescriptionInput" placeholder="  Enter description" class="bg-purple-200 rounded-lg w-full">
+    
+                <div id="todoDescription" class="p-2 bg-gray-100 rounded h-64 overflow-auto">
+                    <p id="todoDescription"></p>
+                </div>
+            </div>
+
+            <!-- box notes -->
+            <div class="bg-white p-4 rounded w-1/6">
+                <h5 class="text-xl font-bold mb-4">Notes</h5>
+                <textarea id="userNotes" placeholder="" class="w-full p-2 border rounded h-64"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-auto w-full p-7 bg-gradient-to-r from-white via-purple-100 to-purple-300  text-white border-t-2 border-purple-700">
+        <div class="container mx-auto flex flex-wrap justify-center gap-16">
+            <div class="text-black font-extrabold">ELEVATE</div>
+            <div class="text-black ">2024 ELEVATE. ALL RIGHTS RESERVED</div>
+            <div class="text-black " >Terms of Service</div>
+            <div class="text-black " >Privacy Policy</div>
+        </div>
+    </div>
+</body>
+
+</html>
