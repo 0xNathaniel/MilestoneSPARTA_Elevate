@@ -27,7 +27,7 @@
         <div class="header-content">
           <div class="logo-section">
             <a href="{% url 'user:home' %}">
-                <img class="logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo">
+                <img class="logo-img" src="{% static 'subgoal/images/logo.png' %}" alt="Elevate Logo">
             </a>
           </div>
           <nav class="nav-links">
@@ -42,24 +42,23 @@
           </div>
         </div>
       </header>
+    </div>
 
     {% block content%}
     
     {% endblock %}
 
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-logo-section">
-            <img class="footer-logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo" />
-          </div>
-          <p>&copy; 2024 ELEVATE. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#" class="footer-link">Terms of Service</a>
-            <a href="#" class="footer-link">Privacy Policy</a>
-          </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img class="footer-logo-img" src="{% static 'subgoal/images/logo_black.png' %}" alt="Elevate Logo" />
+            </div>
+            <p>&copy; 2024 ELEVATE. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
         </div>
-      </footer>
-
-    </div>
+    </footer>
   </body>
 </html>
