@@ -7,8 +7,21 @@ from .models import Goal, Subgoal
 def home(request):
     goals = Goal.objects.filter(user=request.user).order_by('-created_at')
 
+    statuses = ["Completed", "In Progress", "Not Started"]
+    subgoal_counts = [
+        Subgoal.objects.filter(user=request.user, status="Completed").count(),
+        Subgoal.objects.filter(user=request.user, status="In Progress").count(),
+        Subgoal.objects.filter(user=request.user, status="Not Started").count()
+    ]
+
+    task_data = {
+        'labels': statuses,
+        'values': subgoal_counts,
+    }
+
     return render(request, "subgoal/home.html", {
         "goals": goals,
+        "task_data": task_data
     })
 
 def subgoal(request, goal_id):
@@ -16,9 +29,22 @@ def subgoal(request, goal_id):
     goal_choice = Goal.objects.get(id=goal_id)
     subgoals = Subgoal.objects.filter(user=request.user, goal=goal_choice).order_by('-created_at')
     
+    statuses = ["Completed", "In Progress", "Not Started"]
+    subgoal_counts = [
+        Subgoal.objects.filter(user=request.user, status="Completed").count(),
+        Subgoal.objects.filter(user=request.user, status="In Progress").count(),
+        Subgoal.objects.filter(user=request.user, status="Not Started").count()
+    ]
+
+    task_data = {
+        'labels': statuses,
+        'values': subgoal_counts,
+    }
+    
     return render(request, "subgoal/home.html", {
         "goals": goals,
         "subgoals": subgoals,
+        "task_data": task_data
     })
 
 def add_goal(request):
