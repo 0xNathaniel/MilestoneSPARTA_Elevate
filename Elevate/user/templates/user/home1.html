@@ -22,14 +22,14 @@
             <img class="logo-img" src="{% static 'user/images/logo.png' %}" alt="Elevate Logo" />
           </div>
           <nav class="nav-links">
-            <a href="#" class="nav-link"><b>To do list</b></a>
-            <a href="#" class="nav-link"><b>Progress Tracker</b></a>
-            <a href="#" class="nav-link"><b>Subgoal</b></a>
-            <a href="#" class="nav-link"><b>Reminder</b></a>
+            <a href="{% url 'user:login' %}" class="nav-link"><b>To do list</b></a>
+            <a href="{% url 'user:login' %}" class="nav-link"><b>Progress Tracker</b></a>
+            <a href="{% url 'user:login' %}" class="nav-link"><b>Subgoal</b></a>
+            <a href="{% url 'user:login' %}" class="nav-link"><b>Reminder</b></a>
           </nav>
           <div class="auth-links">
-            <a href="#" class="login-link">Log in</a>
-            <a href="#" class="signup-link">Sign up</a>
+            <a href="{% url 'user:login' %}" class="login-link">Log in</a>
+            <a href="{% url 'user:sign_up' %}" class="signup-link">Sign up</a>
           </div>
         </div>
       </header>
@@ -39,7 +39,7 @@
           <h2 class="hero-title">Your personal growth app</h2>
           <p class="hero-description">Elevate aims to help users develop themselves holistically, including aspects of productivity, mental health, time management, and developing positive habits.</p>
           <div class="hero-buttons">
-            <a href="#" class="btn-start">Let's start</a>
+            <a href="{% url 'user:login' %}" class="btn-start">Let's start</a>
             <a href="#" class="btn-questions">Questions?</a>
           </div>
         </div>
