@@ -15,7 +15,8 @@ Pembuatan aplikasi Elevate didukung dengan bahasa pemrograman dan framework seba
 - **Python**
 - **Django**
 - **HTML**
-- **Tailwind CSS**
+- **CSS**
+- **Bootstrap**
 - **JavaScript**
     
 
