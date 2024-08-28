@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_beat',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -96,7 +97,14 @@ DATABASES = {
     }
 }
 
+from celery.schedules import crontab
 
+CELERY_BEAT_SCHEDULE = {
+    'send-reminders-every-hour': {
+        'task': 'myapp.tasks.send_reminders',
+        'schedule': crontab(minute=0, hour='*'),
+    },
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -126,6 +134,18 @@ TIME_ZONE = 'Asia/Jakarta'
 USE_I18N = True
 
 USE_TZ = True
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # or your message broker of choice
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # or your result backend of choice
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Example using Gmail's SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'aramazaya21@gmail.com'
+EMAIL_HOST_PASSWORD = 'Vorobey250616!'
 
 
 # Static files (CSS, JavaScript, Images)
