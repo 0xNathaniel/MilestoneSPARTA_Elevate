@@ -1,0 +1,37 @@
+{% extends "reminder/layout.html" %}
+
+
+{% load static %}
+
+
+{% block title %}
+    Add Reminder
+{% endblock%}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'reminder/css/add_reminder.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="add-subgoal-container">
+        <div class="add-subgoal-background">
+            <p class="card-title">Add New Reminder</p>
+            <form action="{% url 'reminder:add_reminder' %}" method="post" class="subgoal-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Reminder Title:</label>
+                    <input type="text" id="title" name="title" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required class="form-control">
+                </div>
+                <br>
+                <br>
+                <input type="submit" value="Add Reminder" class="add-button">
+            </form>
+        </div>
+    </div>
+{% endblock %}

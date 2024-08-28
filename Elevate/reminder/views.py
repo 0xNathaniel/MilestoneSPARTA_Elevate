@@ -5,37 +5,26 @@ from .models import Reminder
 
 # Create your views here.
 def home(request):
-    reminder = Reminder.objects.filter(user=request.user).order_by('-created_at')
+    reminders = Reminder.objects.filter(user=request.user).order_by('-created_at')
 
     return render(request, "reminder/home.html", {
-        "reminders": reminder
+        "reminders": reminders
     })
 
-def reminder(request, reminder_id):
-    reminder = Reminder.objects.filter(user=request.user).order_by('-created_at')
-    return render(request, "reminder/home.html", {
-        "reminders": reminder
-    })
 def add_reminder(request):
     if request.method == "POST":
         title = request.POST["title"]
-        description = request.POST["description"]
         date = request.POST["date"]
-        completed = request.POST["completed"]
 
         Reminder.objects.create(
             user=request.user,
             title=title,
-            description=description,
             date=date,
-            completed=completed
+            completed=False
             )
         return HttpResponseRedirect(reverse("reminder:home"))
-    
-    reminder = Reminder.objects.filter(user=request.user)
-    return render(request, "reminder/add_reminders.html", {
-        "reminders": reminder
-    })
+
+    return render(request, "reminder/add_reminder.html")
     
 def delete_reminder(request, reminders_id):
     if request.method == "POST":
@@ -54,6 +43,6 @@ def update_reminder(request, reminders_id):
 
         return HttpResponseRedirect(reverse("reminder:home"))
 
-    return render(request, "reminder/update_reminders.html", {
+    return render(request, "reminder/update_reminder.html", {
         "reminders_id": reminders_id
     })

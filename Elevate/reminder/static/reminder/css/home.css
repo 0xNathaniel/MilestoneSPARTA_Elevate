@@ -1,0 +1,57 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.reminder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    min-height: 90vh;
+    border-radius: 8px;
+    background-color: white;
+    gap: 10px;
+}
+
+.title {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #3e1562, #CF36DF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-button {
+    width: 600px;
+}
+
+.reminder-items {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+}
+
+.reminder-items > a {
+    color: black;
+    text-decoration: none;
+}
+
+.reminder-items > a:hover {
+    text-decoration: underline;
+}
+
+.reminder-item-container {
+    display: flex;
+    justify-content: flex-start
+}
+
+.reminder-title {
+    font-size: 24px;
+}

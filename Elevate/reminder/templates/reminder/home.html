@@ -1,13 +1,51 @@
 {% extends "reminder/layout.html" %}
 
+
+{% load static %}
+
+
 {% block title %}
     Home
 {% endblock%}
 
-{% block css %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'reminder/css/home.css' %}">
 {% endblock %}
 
+
 {% block content %}
-    <h1>Home</h1>
+    <div class="flex-container">
+        <div class="reminder-container">
+            <p class="title">Reminder</p>
+            
+            <form action="{% url 'reminder:add_reminder' %}">
+                {% csrf_token %}
+                <input type="submit" value="Add New Reminder" class="form-control form-button">
+            </form>
+            <br>
+            <div class="reminder-items">
+                {% for reminder in reminders %}
+                    <a href="#">
+                        <div class=".reminder-item-container" >
+                            <div class="reminder-title">
+                                {{ reminder.title }}
+                            </div>
+                            <div>
+                                Reminder date: {{ reminder.date }}
+                            </div>
+                            <div>
+                                Completion Status: {{ reminder.completed }}
+                            </div>
+                            <div>
+                                Reminder created at: {{ reminder.created_at}}
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                {% endfor %}
+            </div>
+            <br>
+        </div>
+    </div>
 {% endblock %}
