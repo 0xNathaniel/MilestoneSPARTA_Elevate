@@ -1,0 +1,146 @@
+.subgoal-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    margin-top: 50px;
+}
+
+.subgoal-section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.subgoal-title {
+    position: relative;
+    color: white;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    max-width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    overflow: hidden;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.search-input {
+    border: none;
+    padding: 10px; 
+    font-size: 16px;
+    width: 600px;
+    outline: none;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255);
+}
+
+.search-button {
+    margin-left: 10px;
+    width: 100px;
+    background-image: url("/static/subgoal/images/button_background.png");
+    background-size: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.search-button:hover {
+    background-color: #601c57;
+}
+
+.card-container {
+    color: black;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+}
+
+.card-center {
+    background-color: white;
+    min-height: 70vh;
+    width: 600px;
+    border-radius: 8px;
+}
+
+.card {
+    background-color: white;
+    min-height: 70vh;
+    width: 350px;
+    border-radius: 8px;
+}
+
+.card-title {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #3e1562, #CF36DF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-content {
+    padding-left: 20px;
+}
+
+.goal-container {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    column-gap: 20px;
+    
+}
+
+.goal-title:hover {
+    text-decoration: underline;
+}
+
+.goal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.goal-list {
+    margin: 20px 0;
+}
+
+.empty-subgoal {
+    text-align: center;
+}
+
+.plus-sign-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.plus-sign {
+    width: 20px;
+    height: auto;
+}
+
+.subgoal-title {
+    margin-top: -10px;
+    margin-bottom: 30px;
+}

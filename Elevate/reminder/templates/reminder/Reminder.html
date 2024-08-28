@@ -1,45 +1,64 @@
-{% extends "reminder/layout.html" %}
-
-
-{% load static %}
-
-
-{% block title %}
-    Home
-{% endblock%}
-
-
-{% block css %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ELEVATE WEB</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'reminder/css/styles.css' %}">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-{% endblock %}
-
-{% block content %}
+</head>
+<body class="bg-white">
+    <div class="background-container">
+        <div class="bg-dark"></div>
+        <div class="bg-purple-1"></div>
+        <div class="bg-purple-2"></div>
+        <div class="bg-blue"></div>
+    </div>
+    <div class="header-wrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="Logo.svg" alt="Logo">
+            </div>
+            <div class="side-menu">
+                <a href="https://google.com">
+                    <button class="side-menu-item">To do list</button>
+                </a>
+                <a href="https://google.com">
+                    <button class="side-menu-item">Subgoal</button>
+                </a>
+                <a href="https://google.com">
+                    <button class="side-menu-item">Progress tracker</button>
+                </a>
+                <a href="https://google.com">
+                    <button class="side-menu-item">Reminder</button>
+                </a>
+            </div>
+            <div class = "header-end">
+                <div class="log-out">
+                    <a href="https://google.com">Log out</a>
+                </div>
+                <div class = "profile-img">
+                    <img src="https://via.placeholder.com/65x65" alt="Profile Image">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="reminder-section">
         <h2 class="reminder-title">Reminder</h2>
     </div>
-    <form action="{% url 'reminder:add_reminder' %}" method="post" class="search-bar">
-        {% csrf_token %}
-        <input type="text" class="search-input" placeholder="Insert new reminder" name="reminder">
-        <input type ="submit" class="search-button" value="Add">
-    </form>
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">Search</button>
     </div>
     <div class="card-container">
         <div class="card card-1">
             <div class="menu-item menu-item-1">
-                {% for goal in goals %}
-                        <li class="reminder-list">
-                            <a class="menu-item menu-item-2" href="{% url 'subgoal:goal' goal.id %}">
-                                <div class="reminder-title">{{ goal.title }}</div>
-                                <div>Goal created at: {{ goal.created_at }}</div>
-                            </a>
-                        </li>
-                    {% endfor %}
                 <button class="menu-icon">
-                    <img src="{% static 'reminder/images/Circle_Black.png' %}" alt="Kuliah">
+                    <img src="Circle_Black.svg" alt="Kuliah">
                 </button>
                 <div class="menu-text">
                     <div class="menu-title">Kuliah</div>
@@ -49,25 +68,25 @@
             </div>
             <div class="menu-item menu-item-2">
                 <button class="menu-icon">
-                    <img src="{% static 'reminder/images/Circle_Black.png' %}" alt="Kerja">
+                    <img src="Circle_Black.svg" alt="Kerja">
                 </button>
                 <div class="menu-text">Kerja</div>
             </div>
             <div class="menu-item menu-item-3">
                 <button class="menu-icon">
-                    <img src="{% static 'reminder/images/Circle_Black.png' %}" alt="Fitness">
+                    <img src="Circle_Black.svg" alt="Fitness">
                 </button>
                 <div class="menu-text">Fitness</div>
             </div>
             <div class="menu-item menu-item-4">
                 <button class="menu-icon">
-                    <img src="{% static 'reminder/images/Circle_Black.png' %}" alt="Home">
+                    <img src="Circle_Black.svg" alt="Home">
                 </button>
                 <div class="menu-text">Home</div>
             </div>
             <div class="menu-item menu-item-5">
                 <button class="menu-icon">
-                    <img src="{% static 'reminder/images/Circle_Black.png' %}" alt="Tubes 1">
+                    <img src="Circle_Black.svg" alt="Tubes 1">
                 </button>
                 <div class="menu-text">Tubes 1</div>
             </div>
@@ -78,7 +97,7 @@
             <div class="card card-timeline card-1">
                 <div class="left">
                     <button class="menu-icon2">
-                        <img src="{% static 'reminder/images/Circle_Green.png' %}" alt="Fiksasi submission">
+                        <img src="Circle_Green.svg" alt="Fiksasi submission">
                     </button>
                     <div class="card-content">
                         <div class="card-title">Fiksasi submission</div>
@@ -89,7 +108,7 @@
             <div class="card card-timeline card-2">
                 <div class="left">
                     <button class="menu-icon2">
-                        <img src="{% static 'reminder/images/Circle_Green.png' %}" alt="Submission!">
+                        <img src="Circle_Green.svg" alt="Submission!">
                     </button>
                     <div class="card-content">
                         <div class="card-title">SUBMISSION!</div>
@@ -106,4 +125,12 @@
             <div class="notes-text">yang teliti file submissionnya jangan sampe salah</div>
         </div>
     </div>
-{% endblock %}
+    <div class="footer">
+        <div class="footer-logo">ELEVATE</div>
+        <div class="footer-text">2024 ELEVATE. ALL RIGHTS RESERVED</div>
+        <div class="footer-link">Terms of Service</div>
+        <div class="footer-link">Privacy Policy</div>
+    </div>
+  
+</body>
+</html>
