@@ -17,37 +17,28 @@
 {% block content %}
     <div class="add-subgoal-container">
         <div class="add-subgoal-background">
-            <p class="card-title">Update Subgoal</p>
-            <form action="{% url 'subgoal:update_subgoal' subgoal_id %}" method="post" class="subgoal-form">
+            <p class="card-title">Update Reminder</p>
+            <form action="{% url 'reminder:update_reminder' reminder_id %}" method="post" class="subgoal-form">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="deadline">Deadline:</label>
-                    <input type="date" id="deadline" name="deadline" required class="form-control">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="priority">Priority:</label>
-                    <select id="priority" name="priority" class="form-control">
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="status">Status:</label>
-                    <select id="status" name="status" class="form-control">
-                        <option value="Not Started">Not Started</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
+                    <label for="completed">Completion Status:</label>
+                    <select id="completed" name="completed" class="form-control">
+                        <option value=False>False</option>
+                        <option value=True>True</option>
                     </select>
                 </div>
                 <br>
                 <br>
-                <input type="submit" value="Update Subgoal" class="update-button">
+                <input type="submit" value="Update Reminder" class="update-button">
             </form>
 
-            <form action="{% url 'subgoal:delete_subgoal' subgoal_id %}" method="post" class="subgoal-form">
+            <form action="{% url 'reminder:delete_reminder' reminder_id %}" method="post" class="subgoal-form">
                 {% csrf_token %}
-                <input type="submit" value="Delete Subgoal" class="delete-button">
+                <input type="submit" value="Delete Reminder" class="delete-button">
             </form>
         </div>
     </div>

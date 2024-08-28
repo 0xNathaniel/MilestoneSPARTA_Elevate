@@ -26,8 +26,8 @@
             <br>
             <div class="reminder-items">
                 {% for reminder in reminders %}
-                    <a href="#">
-                        <div class=".reminder-item-container" >
+                    <a href="{% url 'reminder:update_reminder' reminder.id %}">
+                        <div class="reminder-item-container" >
                             <div class="reminder-title">
                                 {{ reminder.title }}
                             </div>

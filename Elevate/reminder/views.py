@@ -26,23 +26,22 @@ def add_reminder(request):
 
     return render(request, "reminder/add_reminder.html")
     
-def delete_reminder(request, reminders_id):
+def update_reminder(request, reminder_id):
     if request.method == "POST":
-        Reminder = Reminder.objects.get(user=request.user, id=reminders_id)
-        Reminder.delete()
-        return HttpResponseRedirect(reverse("reminder:home"))
-    
-def update_reminder(request, reminders_id):
-    if request.method == "POST":
-        reminder = Reminder.objects.get(user=request.user, id=reminders_id)
+        reminder = Reminder.objects.get(user=request.user, id=reminder_id)
         
         reminder.date = request.POST["date"]
-        reminder.description = request.POST["description"]
         reminder.completed = request.POST["completed"]
         reminder.save()
 
         return HttpResponseRedirect(reverse("reminder:home"))
 
     return render(request, "reminder/update_reminder.html", {
-        "reminders_id": reminders_id
+        "reminder_id": reminder_id
     })
+    
+def delete_reminder(request, reminder_id):
+    if request.method == "POST":
+        reminder = Reminder.objects.get(user=request.user, id=reminder_id)
+        reminder.delete()
+        return HttpResponseRedirect(reverse("reminder:home"))
